@@ -302,6 +302,8 @@ EXTENDED DESCRIPTION
        vi  utility. Implementations may offer other command line editing modes correspond‐
        ing to other editing utilities.
 
+       // Default is emacs mode, which can show by use set -o or set +o
+       // emacs mode is good, but vim mode better.
        The command set -o vi shall enable vi-mode editing and place sh into vi insert mode
        (see  Command  Line  Editing (vi-mode)).  This command also shall disable any other
        editing mode that the implementation may provide. The command set  +o  vi  disables
@@ -481,6 +483,7 @@ EXTENDED DESCRIPTION
                  the  previous  command. The count specified in the '.'  command shall be‐
                  come the count for subsequent '.'  commands issued without a count.
 
+       // So fun vi mode is
        [number]v Invoke the vi editor to edit the current  command  line  in  a  temporary
                  file.  When the editor exits, the commands in the temporary file shall be
                  executed and placed in the command history. If a number is  included,  it
@@ -831,6 +834,7 @@ APPLICATION USAGE
 
        For example, to determine the location of the standard sh utility:
 
+           // command? what is it?
            command -v sh
 
        On some implementations this might return:
