@@ -7,6 +7,10 @@ SYNOPSIS
        gdb [OPTIONS] [prog|prog procID|prog core]
 
 DESCRIPTION
+       // Um, can gdb dubugger itself?
+       // I do that by attach to gdb,
+       // then I got the message: I refuse to debug myself!
+
        The purpose of a debugger such as GDB is to allow you to see what is going on "inside" another
        program while it executes -- or what another program was doing at the moment it crashed.
 
@@ -63,6 +67,7 @@ DESCRIPTION
        next
            Execute next program line (after stopping); step over any function calls in the line.
 
+       // It seems just modifying the corresponding source files, not patching them.
        edit [file:]function
            look at the program line where it is presently stopped.
 
@@ -112,6 +117,7 @@ OPTIONS
        -s file
            Read symbol table from file.
 
+       // By use --write option, can patch prog?
        --write
            Enable writing into executable and core files.
 
@@ -127,6 +133,7 @@ OPTIONS
        -c file
            Use file as a core dump to examine.
 
+       // lazy people are overjoyed by this to automate the debug process.
        --command=file
        -x file
            Execute GDB commands from file.
@@ -155,6 +162,7 @@ OPTIONS
        -q  "Quiet".  Do not print the introductory and copyright messages.  These messages are also
            suppressed in batch mode.
 
+       // sometime may be useful, like -x proc.gdb --batch
        --batch
            Run in batch mode.  Exit with status 0 after processing all the command files specified with -x
            (and .gdbinit, if not inhibited).  Exit with nonzero status if an error occurs in executing the
@@ -205,6 +213,7 @@ OPTIONS
        --return-child-result
            GDB's exit code will be the same as the child's exit code.
 
+       // mark
        --configuration
            Print details about GDB configuration and then exit.
 
@@ -237,6 +246,7 @@ OPTIONS
            Run using device for your program's standard input and output.
 
 SEE ALSO
+       // ah, info is more detailed
        The full documentation for GDB is maintained as a Texinfo manual.  If the "info" and "gdb" programs
        and GDB's Texinfo documentation are properly installed at your site, the command
 

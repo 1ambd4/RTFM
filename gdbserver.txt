@@ -14,6 +14,23 @@ DESCRIPTION
        gdbserver is a program that allows you to run GDB on a different machine than the one which is
        running the program being debugged.
 
+       // Usage
+
+       // target$ gdbserver :5678 ./a.out
+       // 
+       // host$ gdb ./a.out
+       // host$ (gdb) target remote :5678
+
+       // I meet a strange question when use gdberver,
+       // "Remote replied unexpectedly to 'vMustReplyEmpty': timeout"
+       // After STFW, the possible way to solve was use a clear bash since I have not any bash configuration
+       // ref: https://stackoverflow.com/questions/55713340/error-connecting-to-remote-gdbserver-through-gdb
+       // ref: https://github.com/Snaipe/Criterion/issues/281
+       // In short, like below
+
+       // target$ env -i bash --login
+       // target$ gdbserver :5678 ./a.out
+
        Usage (server (target) side):
 
        First, you need to have a copy of the program you want to debug put onto the target system.  The
